@@ -1,0 +1,78 @@
+body {
+  background-color: black;
+  background-image: url(../assets/stunner.jpg);
+  overflow: hidden;
+}
+.index {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100%;
+}
+button {
+  margin-top: 20%;
+  border-radius: 30px;
+  margin-left: 45%;
+  margin-right: 45%;
+  background-color: black;
+  cursor: pointer;
+  justify-content: center;
+  background: rgba(108, 14, 185, 0.5);
+  overflow: hidden;
+  text-decoration: none;
+  transition: 1s;
+  -webkit-box-reflect: below 1px;
+}
+button:hover {
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+button::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 400%;
+  background: var(--clr);
+  transition: 1s;
+  animation: animate 5s linear infinite;
+  animation-delay: calc(-0.33s * var(--1));
+}
+button:hover::before {
+  width: 120%;
+}
+
+ button::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: url(../assets/blood.jpg);
+  transition: 0.5s;
+  
+} 
+
+button:hover::after {
+  background: var(--clr);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+span {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+button:hover span {
+  opacity: 1;
+}
